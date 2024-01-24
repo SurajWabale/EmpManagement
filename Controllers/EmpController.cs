@@ -73,8 +73,7 @@ namespace EmpManagement.Controllers
         [HttpPost]
         public IActionResult Login(Login login)
         {
-            var userInDb = _db.Logins.FirstOrDefault(u => u.LoginId == login.LoginId && u.Password == login.Password);
-         //   Console.WriteLine(userInDb.UserType);
+            var userInDb = _db.Logins.FirstOrDefault(u => u.LoginId == login.LoginId && u.Password == login.Password);      
             if (userInDb.UserType.Equals("Admin"))
             {
                     List<Emp> empList = _db.Employees.ToList();
