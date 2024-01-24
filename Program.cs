@@ -1,6 +1,5 @@
 using EmpManagement.DAL;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity;
 
 namespace EmpManagement
 {

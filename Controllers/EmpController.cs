@@ -68,31 +68,30 @@ namespace EmpManagement.Controllers
         {
 
             return View();
-        }
+}
 
         [HttpPost]
         public IActionResult Login(Login login)
         {
-           
             var userInDb = _db.Logins.FirstOrDefault(u => u.LoginId == login.LoginId && u.Password == login.Password);
-            
-            if (userInDb != null)
-                {
-                List<Emp> empList = _db.Employees.ToList();
-                TempData["success"]  = "Logged in successfully";
-                    return View("Index",empList);
-                }
-                else
-                {
-               // TempData["error"] = "Logged in Failed Try Again";
+         //   Console.WriteLine(userInDb.UserType);
+            if (userInDb.UserType.Equals("Admin"))
+            {
+                    List<Emp> empList = _db.Employees.ToList();
+                    TempData["success"] = "Logged in successfully";
+                    return View("Index", empList);  
+            }
+            else if(userInDb.UserType.Equals("Employee"))
+            {
+                
+                Emp? emp = _db.Employees.FirstOrDefault(u => u.Name == userInDb.Name);
+                return View("EmpDashBoard",emp);
+            }
+            else
+            {
                 return View();
-                }
-
+            }
         }
-
-
-     
-
         public IActionResult Create() 
         {
             return View();

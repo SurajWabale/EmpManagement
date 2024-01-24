@@ -1,0 +1,61 @@
+﻿@model Emp
+
+<div class="container mt-4 ">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="mb-3">My Dashboard</h1>
+        </div>
+    </div>
+
+    <form class="border p-2">
+        <div class="form-group row mb-3">
+            <label asp-for="Name" class="col-sm-2 col-form-label">Employee Name</label>
+            <div class="col-sm-10">
+                <input asp-for="Name" readonly class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group row mb-3">
+            <label asp-for="DepartmentName" class="col-sm-2 col-form-label">Department Name</label>
+            <div class="col-sm-10">
+                <input asp-for="DepartmentName" readonly class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group row mb-3">
+            <label asp-for="salary" class="col-sm-2 col-form-label">Salary</label>
+            <div class="col-sm-10">
+                <input asp-for="salary" readonly class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group row mb-3">
+            <label asp-for="Email" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+                <input asp-for="Email" readonly class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group row mb-3">
+            <label asp-for="Phone" class="col-sm-2 col-form-label">Phone</label>
+            <div class="col-sm-10">
+                <input asp-for="Phone" readonly class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group row mb-3">
+            <label asp-for="Address" class="col-sm-2 col-form-label">Address</label>
+            <div class="col-sm-10">
+                <input asp-for="Address" readonly class="form-control" />
+            </div>
+        </div>
+
+        
+    </form>
+</div>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

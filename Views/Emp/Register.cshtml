@@ -7,29 +7,36 @@
                 <h1>Create New Account</h1>
             </div>
             <div class="mb-3 row  m-1">
-                <label asp-for="Name" >User Name</label>
+                <label asp-for="Name"><strong>User Name</strong></label>
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-bg-danger"></span>
             </div>
             <div class="mb-3 row  m-1">
-                <label asp-for="Email">Email</label>
+                <label asp-for="Email"><strong>Email</strong></label>
                 <input asp-for="Email" class="form-control" />
                 <span asp-validation-for="Email" class="text-bg-danger"></span>
             </div >
             <div class="mb-3 row  m-1">
-                <label asp-for="Phone">Phone No.</label>
+                <label asp-for="Phone"><strong>Phone No.</strong></label>
                 <input asp-for="Phone" class="form-control" />
                 <span asp-validation-for="Phone" class="text-bg-danger"></span>
             </div>
             <div class="mb-3 row  m-1">
-                <label asp-for="LoginId">User_ID</label>
+                <label asp-for="LoginId"><strong>User_ID</strong></label>
                 <input asp-for="LoginId" class="form-control" />
                 <span asp-validation-for="LoginId" class="text-bg-danger"></span>
             </div>
             <div class="mb-3 row  m-1">
-                <label asp-for="Password">Password</label>
+                <label asp-for="Password"><strong>Password</strong></label>
                 <input asp-for="Password" class="form-control" />
                 <span asp-validation-for="Password" class="text-bg-danger"></span>
+            </div>
+            <div class="col-md-10">
+                <label asp-for="UserType"><strong>User_Type </strong>         :</label>
+                Employee
+                @Html.RadioButtonFor(model => model.UserType, "Employee")
+                Admin
+                @Html.RadioButtonFor(model => model.UserType, "Admin")
             </div>
             <div>
                 <button type="submit" class="btn btn-primary m-1">Submit</button>
