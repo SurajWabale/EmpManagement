@@ -1,0 +1,49 @@
+﻿@model Login
+
+<div class="container">
+    <form class="border p-2" method="post">
+        <div>
+            <div >
+                <h1>Create New Account</h1>
+            </div>
+            <div class="mb-3 row  m-1">
+                <label asp-for="Name" >User Name</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-bg-danger"></span>
+            </div>
+            <div class="mb-3 row  m-1">
+                <label asp-for="Email">Email</label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-bg-danger"></span>
+            </div >
+            <div class="mb-3 row  m-1">
+                <label asp-for="Phone">Phone No.</label>
+                <input asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone" class="text-bg-danger"></span>
+            </div>
+            <div class="mb-3 row  m-1">
+                <label asp-for="LoginId">User_ID</label>
+                <input asp-for="LoginId" class="form-control" />
+                <span asp-validation-for="LoginId" class="text-bg-danger"></span>
+            </div>
+            <div class="mb-3 row  m-1">
+                <label asp-for="Password">Password</label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-bg-danger"></span>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary m-1">Submit</button>
+                <button class="btn btn-danger m-2"><a asp-controller="Home" asp-action="Index">Back</a></button>
+            </div>
+            <div>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial"/>
+    }
+}

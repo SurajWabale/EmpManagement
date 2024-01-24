@@ -1,0 +1,43 @@
+﻿@model Emp
+
+<div class="container">
+    <form class="border p-2" method="post">
+        <div>
+            <div>
+                <h1>Delete Employee Detail</h1>
+            </div>
+            <div class="mb-3 row p-1 m-1">
+                <label asp-for="Name" class="p-0">Employee Name</label>
+                <input asp-for="Name" disabled class="form-control" />
+            </div>
+            <div class="mb-3 row  m-1">
+                <label asp-for="DepartmentName">Department Name</label>
+                <input asp-for="DepartmentName" disabled class="form-control" />
+            </div>
+            <div class="mb-3 row  m-1">
+                <label asp-for="salary">Salary</label>
+                <input asp-for="salary" disabled class="form-control" />
+            </div>
+            <div class="mb-3 row  m-1">
+                <label asp-for="Email">Email</label>
+                <input asp-for="Email" disabled class="form-control" />
+            </div>
+            <div class="mb-3 row  m-1">
+                <label asp-for="Phone">Phone</label>
+                <input asp-for="Phone" disabled class="form-control" />
+            </div>
+            <div class="mb-3 row  m-1">
+                <label asp-for="Address">Address</label>
+                <input asp-for="Address" disabled class="form-control" />
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary m-1">Delete</button>
+                <button class="btn btn-danger m-2"><a asp-controller="Emp" asp-action="Index">Back</a></button>
+
+            </div>
+            <div>
+            </div>
+        </div>
+
+    </form>
+</div>

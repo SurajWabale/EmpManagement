@@ -1,0 +1,65 @@
+﻿@model List<Emp>
+
+    <partial name="_Notification" />
+<div class="container">
+    <!-- Heading and Add New Employee Button -->
+    <div class="row pt-4 mb-3">
+        <div class="col-md-6">
+            <h1 class="text-dark">
+                Employee Details
+            </h1>
+        </div>
+        <div class="col-md-6 text-md-end">
+            <a asp-controller="Emp" asp-action="Create" class="btn btn-primary">
+                <i class="bi bi-plus"></i> Add New Employee
+            </a>
+        </div>
+    </div>
+
+    <!-- Responsive Table -->
+    <div class="card">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Emp_ID</th>
+                            <th>NAME</th>
+                            <th>DEPARTMENT_NAME</th>
+                            <th>SALARY</th>
+                            <th>EMAIL</th>
+                            <th>PHONE</th>
+                            <th>ADDRESS</th>
+                            <th>UPDATE</th>
+                            <th>DELETE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var obj in Model)
+                        {
+                            <tr>
+                                <td>@obj.Id</td>
+                                <td>@obj.Name</td>
+                                <td>@obj.DepartmentName</td>
+                                <td>@obj.salary</td>
+                                <td>@obj.Email</td>
+                                <td>@obj.Phone</td>
+                                <td>@obj.Address</td>
+                                <td>
+                                    <a asp-controller="Emp" asp-action="Update" asp-route-Id="@obj.Id" class="btn btn-warning btn-sm">
+                                        <i class="bi bi-pencil-square"></i> Update
+                                    </a>
+                                </td>
+                                <td>
+                                    <a asp-controller="Emp" asp-action="Delete" asp-route-Id="@obj.Id" class="btn btn-danger btn-sm" onclick="return confirm('Are you Sure?')">
+                                        <i class="bi bi-trash"></i> Delete
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
